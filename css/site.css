@@ -1,0 +1,199 @@
+/* Тёмная страница в цветах приложения. Ролик показывается только после нажатия. */
+
+:root {
+  --bg: #0a0a0a;
+  --card: #14181e;
+  --line: #2a313b;
+  --text: #f3f5f7;
+  --muted: #a7b0ba;
+  --accent: #6fd8cc;
+  --accent-ink: #06221e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+}
+
+.wrap {
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0 8px;
+}
+
+.logo {
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.langs {
+  display: flex;
+  gap: 6px;
+}
+
+.langs button,
+.watch,
+.store {
+  font: inherit;
+  cursor: pointer;
+}
+
+.langs button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+.langs button[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+.hero {
+  padding: 48px 0 28px;
+}
+
+.hero h1 {
+  margin: 0 0 22px;
+  max-width: 16ch;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.12;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.store {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 12px 18px;
+}
+
+.store:hover,
+.watch:hover,
+.langs button:hover {
+  filter: brightness(1.08);
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 36px;
+  align-items: center;
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+}
+
+.feature:nth-child(even) .shot {
+  order: 2;
+}
+
+.shot {
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.shot img,
+.shot iframe {
+  width: min(100%, 300px);
+  border-radius: 28px;
+  background: #111;
+}
+
+.shot img {
+  height: auto;
+  display: block;
+}
+
+.shot iframe {
+  aspect-ratio: 9 / 16;
+  border: 0;
+}
+
+.watch {
+  border: 0;
+  background: var(--card);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+}
+
+.watch[hidden] {
+  display: none;
+}
+
+.copy h2 {
+  margin: 0 0 8px;
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 42ch;
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 28px 0 48px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .feature {
+    grid-template-columns: 1fr;
+  }
+
+  .feature:nth-child(even) .shot {
+    order: 0;
+  }
+
+  .hero {
+    padding-top: 28px;
+  }
+}
