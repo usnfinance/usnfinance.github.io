@@ -50,22 +50,23 @@ a {
   gap: 6px;
 }
 
-.langs button,
+.langs a,
 .watch,
 .store {
   font: inherit;
   cursor: pointer;
 }
 
-.langs button {
+.langs a {
   border: 1px solid var(--line);
   background: transparent;
   color: var(--muted);
   border-radius: 999px;
   padding: 6px 12px;
+  text-decoration: none;
 }
 
-.langs button[aria-pressed="true"] {
+.langs a[aria-current="page"] {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--accent-ink);
@@ -120,7 +121,7 @@ a {
 }
 
 .watch:hover,
-.langs button:hover {
+.langs a:hover {
   filter: brightness(1.08);
 }
 
