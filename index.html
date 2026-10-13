@@ -4,22 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>USN Finance</title>
-  <meta name="description" content="Личный и семейный учёт денег в USN Finance.">
+  <meta name="description" content="USN Финансы — приложение для личного и совместного учёта финансов.">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
   <header class="wrap">
     <div class="top-bar">
-      <a class="logo" href="#top">USN Finance</a>
       <div class="langs" role="group" data-i18n-aria="langGroup" aria-label="Язык">
         <button type="button" data-lang="uk" aria-pressed="false">UK</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
         <button type="button" data-lang="ru" aria-pressed="true">RU</button>
       </div>
     </div>
     <div class="hero" id="top">
-      <h1 data-i18n="tagline">Личный и семейный учёт денег</h1>
-      <a class="store" href="https://play.google.com/store/apps/details?id=com.usn.finance" data-i18n="store">Открыть в Google Play</a>
+      <div class="hero-copy">
+        <h1><span class="brand">USN Finance</span> <span data-i18n="tagline">это гибкое и мультивалютное приложение для личного и совместного учета финансов, созданное для тех, кто хочет видеть кристально чистую картину своих доходов, расходов, сбережений и балансов. Наш трекер разработан с упором на высокий уровень приватности и надежную защиту личных данных пользователя.</span></h1>
+        <p class="lead" data-i18n="taglineMore">Если вы ищете надежный менеджер расходов, удобную книгу учета для семьи или инструмент для контроля денег в малом бизнесе, здесь полный набор профессиональных функций без перегруженного интерфейса.</p>
+        <a class="store" href="https://play.google.com/store/apps/details?id=com.usn.finance">
+          <img src="images/google-play-ru.png" width="646" height="250" alt="Скачать из Google Play" data-i18n-alt="store" data-i18n-src="storeBadge">
+        </a>
+      </div>
+      <img class="hero-art" src="images/hero.png" width="720" height="720" alt="">
     </div>
   </header>
 
@@ -32,7 +40,7 @@
       </figure>
       <div class="copy">
         <h2 data-i18n="f1title">Лента операций — вся ваша финансовая история в одном месте</h2>
-        <p data-i18n="f1text">Следите за доходами, расходами, переводами и обменом валют. Используйте гибкие фильтры по дате, счетам или категориям, чтобы мгновенно найти нужную транзакцию.</p>
+        <p data-i18n="f1text">Следите за доходами, расходами, переводами и обменом валют. Используйте гибкие фильтры по дате, счетам или категориям, чтобы найти нужные записи.</p>
       </div>
     </article>
 
@@ -44,19 +52,19 @@
       </figure>
       <div class="copy">
         <h2 data-i18n="f2title">Здесь собрана сводка ваших операций</h2>
-        <p data-i18n="f2text">Все операции автоматически группируются по счетам и категориям, чтобы вы мгновенно видели общую картину.</p>
+        <p data-i18n="f2text">Все операции автоматически группируются по счетам и категориям, чтобы вы сразу видели общую картину.</p>
       </div>
     </article>
 
     <!-- Ролик: как работает ИИ-сканер чеков. -->
     <article class="feature" data-video="">
       <figure class="shot">
-        <img src="images/03-scanner.jpg" width="801" height="1661" alt="Расходы по фото, тексту или ссылке" data-i18n-alt="f3title">
+        <img src="images/03-scanner.jpg" width="801" height="1661" alt="ИИ-сканер: от чека до готовой операции" data-i18n-alt="f3title">
         <button type="button" class="watch" data-i18n="watch" hidden>Смотреть</button>
       </figure>
       <div class="copy">
-        <h2 data-i18n="f3title">Расходы по фото, тексту или ссылке</h2>
-        <p data-i18n="f3text">Умный ИИ-сканер. Читает фото, скриншоты, QR-коды, обычный текст и ссылки, находит итоговую сумму, отдельные позиции и категории.</p>
+        <h2 data-i18n="f3title">ИИ-сканер: от чека до готовой операции</h2>
+        <p data-i18n="f3text">Просто загрузите фото, скриншот, QR-код, текст или ссылку. Умный сканер мгновенно распознает отдельные позиции, автоматически сгруппирует их по категориям и создаст готовую финансовую операцию без ручного ввода.</p>
       </div>
     </article>
 
@@ -122,8 +130,13 @@
   </main>
 
   <footer class="wrap foot">
-    <a id="privacy" href="https://usnfinance.github.io/privacy-policy/ru.html" data-i18n="privacy">Политика конфиденциальности</a>
-    <a href="mailto:usnfinance@gmail.com">usnfinance@gmail.com</a>
+    <div class="foot-links">
+      <a id="privacy" href="https://usnfinance.github.io/privacy-policy/ru.html" data-i18n="privacy">Политика конфиденциальности</a>
+      <a href="mailto:usnfinance@gmail.com">usnfinance@gmail.com</a>
+    </div>
+    <a class="store" href="https://play.google.com/store/apps/details?id=com.usn.finance">
+      <img src="images/google-play-ru.png" width="646" height="250" alt="Скачать из Google Play" data-i18n-alt="store" data-i18n-src="storeBadge">
+    </a>
   </footer>
 
   <script src="js/site.js"></script>

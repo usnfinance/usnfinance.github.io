@@ -38,20 +38,15 @@ a {
 .top-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 16px;
   padding: 18px 0 8px;
 }
 
-.logo {
-  color: var(--text);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-}
-
 .langs {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 6px;
 }
 
@@ -78,29 +73,52 @@ a {
 }
 
 .hero {
-  padding: 48px 0 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
+  column-gap: 28px;
+  align-items: center;
+  padding: 28px 0 28px;
 }
 
 .hero h1 {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.hero h1 .brand {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.hero .lead {
   margin: 0 0 22px;
-  max-width: 16ch;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  line-height: 1.12;
-  font-weight: 650;
-  letter-spacing: -0.03em;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.hero-art {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .store {
   display: inline-block;
-  background: var(--accent);
-  color: var(--accent-ink);
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: 999px;
-  padding: 12px 18px;
+  line-height: 0;
 }
 
-.store:hover,
+.store img {
+  display: block;
+  height: 84px;
+  width: auto;
+}
+
 .watch:hover,
 .langs button:hover {
   filter: brightness(1.08);
@@ -108,15 +126,21 @@ a {
 
 .feature {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 300px minmax(0, 520px);
+  justify-content: center;
   gap: 36px;
   align-items: center;
   padding: 36px 0;
   border-top: 1px solid var(--line);
 }
 
-.feature:nth-child(even) .shot {
-  order: 2;
+/* У чётных блоков текст слева, снимок справа. Ширина текста та же. */
+.feature:nth-child(even) {
+  grid-template-columns: minmax(0, 520px) 300px;
+}
+
+.feature:nth-child(even) .copy {
+  order: -1;
 }
 
 .shot {
@@ -172,11 +196,18 @@ a {
 
 .foot {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
   padding: 28px 0 48px;
   border-top: 1px solid var(--line);
   color: var(--muted);
+}
+
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
 }
 
 :focus-visible {
@@ -185,15 +216,23 @@ a {
 }
 
 @media (max-width: 760px) {
-  .feature {
+  .feature,
+  .feature:nth-child(even) {
     grid-template-columns: 1fr;
   }
 
+  .feature:nth-child(even) .copy,
   .feature:nth-child(even) .shot {
     order: 0;
   }
 
   .hero {
+    grid-template-columns: 1fr;
     padding-top: 28px;
+  }
+
+  .hero-art {
+    max-width: 280px;
+    margin-top: 8px;
   }
 }
