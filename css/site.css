@@ -233,7 +233,9 @@ a {
   }
 
   .hero-art {
+    order: -1;
     max-width: 280px;
-    margin-top: 8px;
+    margin: 0 auto 8px;
+    justify-self: center;
   }
 }
