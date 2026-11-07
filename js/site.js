@@ -15,12 +15,14 @@ function mountVideos() {
       const shot = article.querySelector(".shot");
       const heading = article.querySelector("h2");
       const frame = document.createElement("iframe");
-      frame.src = "https://www.youtube-nocookie.com/embed/" + raw + "?rel=0";
+      // YouTube иначе не видит адрес сайта и показывает ошибку 153.
+      frame.referrerPolicy = "strict-origin-when-cross-origin";
       frame.title = heading ? heading.textContent.trim() : "USN Finance";
       frame.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       frame.allowFullscreen = true;
       shot.replaceChildren(frame);
+      frame.src = "https://www.youtube-nocookie.com/embed/" + raw + "?rel=0";
     });
   });
 }
